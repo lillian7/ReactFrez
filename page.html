@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="build/react.js"></script>
+    <script src="build/react-dom.js"></script>
+    <script src="build/JSXTransformer.js"></script>
+  </head>
+  <body>
+    <div id="mount-point"></div>
+    <script>
+
+        var Welcome = React.createClass({
+          render: function(){
+            return (<h1>Hello, Hello, {this.props.name}</h1>);
+          }
+        });
+
+        var App = React.createClass({
+          render: function(){
+            return (
+              <div>
+                    <Welcome name="Sara" />
+                    <Welcome name="Cahal" />
+                    <Welcome name="Edite" />
+                  </div>
+            );
+          }
+        });
+
+
+      ReactDOM.render(
+        <App />,
+        document.getElementById('mount-point')
+      );
+      </script>
+  </body>
+</html>
